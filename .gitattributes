@@ -1,2 +1,25 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+import os
+import time
+from pynput.mouse import Button, Controller
+
+mouse = Controller()
+duration=float(input('!duration of auto-clicker runtime (in minutes): '))*60
+ctu =True
+print('<!>autoclicker will start runing in 10s')
+time.sleep(10)
+print('!strating')
+while ctu:
+    for lc in range(round(duration)):
+        mouse.press(Button.left)
+        mouse.release(Button.left)
+        time.sleep(1)
+    print('continue program?(0 to terminate)')
+    duration=float(input('!duration of auto-clicker runtime (in minutes): '))*60
+    if duration ==0:
+        ctu=False
+    else:
+        print('<!>autoclicker will start runing in 10s')
+        time.sleep(10)
+print('<!>terminated')
+
+
